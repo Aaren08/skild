@@ -17,7 +17,7 @@ const SkillCard = ({
 	installCommand,
 	tags,
 	title,
-}) => {
+}: SkillRecord) => {
 	const [copied, setCopied] = useState(false);
 
 	const handleCopy = async () => {
