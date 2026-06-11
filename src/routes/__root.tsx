@@ -8,6 +8,7 @@ import ClerkProvider from '../integrations/clerk/provider'
 
 import appCss from '../styles.css?url'
 import Navbar from '#/components/Navbar'
+import Crosshair from '#/components/Crosshair'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -50,6 +51,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               <header>
                 <div className="frame">
             <Navbar />
+            <Crosshair />
+            <Crosshair />
                 </div>
               </header>
               <main>
