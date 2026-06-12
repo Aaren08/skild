@@ -5,6 +5,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import Crosshair from "#/components/Crosshair";
 import Navbar from "#/components/Navbar";
 import PostHogProvider from "../integrations/posthog/provider";
+import PostHogPageView from "../integrations/posthog/pageview";
 import appCss from "../styles.css?url";
 
 export const Route = createRootRoute({
@@ -45,6 +46,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<body className="font-sans antialiased wrap-anywhere">
 				<ClerkProvider>
 					<PostHogProvider>
+						<PostHogPageView />
 						<div id="root-layout">
 							<header>
 								<div className="frame">
