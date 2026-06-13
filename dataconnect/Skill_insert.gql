@@ -1,0 +1,16 @@
+# This is a file for you to write an un-named mutation. 
+# Only one un-named mutation is allowed per file.
+mutation {
+  skill_insert(
+    data: {
+    id: "123e4567-e89b-12d3-a456-426614174000",
+    authorClerkId: "user_3F1dVheXRhRAiW7ADlhslERJqiM",
+    createdAt: "2026-06-13T08:00:50.411Z",
+    description: "A JavaScript library for building user interfaces.", 
+    installCommand: "npm install react react-dom", 
+    promptConfig: "You are a helpful assistant that provides information about the React library.", 
+    tags: ["javascript", "ui", "web"], 
+    title: "React", 
+    usageExample: "Obscure code example here"}
+  )
+}
