@@ -5,20 +5,23 @@ import {
 	Bookmark,
 	Check as CheckIcon,
 	Copy as CopyIcon,
-	MessageSquare,
 } from "lucide-react";
 import { useState } from "react";
+import type { GetSkillsData } from "#/dataconnect-generated";
+
+type SkillCardProps = GetSkillsData["skills"][number];
 
 const SkillCard = ({
-	authorEmail,
-	category,
 	createdAt,
 	description,
 	installCommand,
 	tags,
 	title,
-}) => {
+	author,
+}: SkillCardProps) => {
 	const [copied, setCopied] = useState(false);
+
+	const category = tags[0] ?? "General";
 
 	const handleCopy = async () => {
 		const text = installCommand ?? title ?? "";
@@ -52,9 +55,13 @@ const SkillCard = ({
 			<div className="body">
 				<div className="meta">
 					<div className="author">
-						<img src="/logo512.png" alt="author avatar" className="avatar" />
+						<img
+							src={author.imageUrl || "/logo512.png"}
+							alt={`${author.username ?? "Unknown author"}'s avatar`}
+							className="avatar"
+						/>
 						<div className="author-copy">
-							<p>Adrian</p>
+							<p>{author.username ?? "Unknown author"}</p>
 							<p>{new Date(createdAt).toDateString()}</p>
 						</div>
 					</div>
@@ -90,10 +97,7 @@ const SkillCard = ({
 							<span>{tags.length}</span>
 						</button>
 
-						<div className="comments">
-							<MessageSquare size={14} />
-							<span>{authorEmail ? 1 : 0}</span>
-						</div>
+						{/* Comment counter hidden until real comment data is available */}
 					</div>
 
 					<div className="actions">

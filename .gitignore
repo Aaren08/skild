@@ -11,3 +11,11 @@ dist-ssr
 .vinxi
 __unconfig*
 todos.json
+.env.local
+
+.firebase
+dataconnect/.dataconnect
+
+.agents
+.claude
+.vscode
