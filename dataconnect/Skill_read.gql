@@ -5,7 +5,6 @@ query {
   skills{
     author {
       clerkId
-      email
       username
       imageUrl
     }

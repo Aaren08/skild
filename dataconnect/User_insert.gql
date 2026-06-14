@@ -2,8 +2,8 @@
 # Only one un-named mutation is allowed per file.
 mutation {
   user_insert(data: {
-  clerkId: "user_3F1dVheXRhRAiW7ADlhslERJqiM",
-  email: "schneiderneil392@gmail.com",
-  imageUrl: "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18zRjFkVmY2MVZUUTZ4MExaRnh2UVZNczB0c0cifQ", 
-  username: "neilschneider"})
+  clerkId: "user_example123",
+  email: "user@example.com",
+  imageUrl: "https://example.com/avatar.png",
+  username: "exampleuser"})
 }

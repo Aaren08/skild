@@ -5,7 +5,6 @@ import {
 	Bookmark,
 	Check as CheckIcon,
 	Copy as CopyIcon,
-	MessageSquare,
 } from "lucide-react";
 import { useState } from "react";
 import type { GetSkillsData } from "#/dataconnect-generated";
@@ -58,11 +57,11 @@ const SkillCard = ({
 					<div className="author">
 						<img
 							src={author.imageUrl || "/logo512.png"}
-							alt={`${author.username}'s avatar`}
+							alt={`${author.username ?? "Unknown author"}'s avatar`}
 							className="avatar"
 						/>
 						<div className="author-copy">
-							<p>{author.username}</p>
+							<p>{author.username ?? "Unknown author"}</p>
 							<p>{new Date(createdAt).toDateString()}</p>
 						</div>
 					</div>
@@ -98,10 +97,7 @@ const SkillCard = ({
 							<span>{tags.length}</span>
 						</button>
 
-						<div className="comments">
-							<MessageSquare size={14} />
-							<span>{author.email ? 1 : 0}</span>
-						</div>
+						{/* Comment counter hidden until real comment data is available */}
 					</div>
 
 					<div className="actions">

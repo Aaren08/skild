@@ -11,10 +11,19 @@ const getSkillsFn = createServerFn({ method: "GET" }).handler(async () => {
 			searchTerm: "",
 			limit: 10,
 		});
-		return data.skills || [];
+		const skills = data.skills || [];
+		const safeSkills = skills.map((skill) => ({
+			...skill,
+			author: {
+				...skill.author,
+				// remove email to avoid exposing PII to the client
+				email: undefined,
+			},
+		}));
+		return safeSkills;
 	} catch (error) {
 		console.error("Error fetching skills:", error);
-		return [];
+		throw new Error("Failed to fetch skills");
 	}
 });
 

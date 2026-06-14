@@ -21,7 +21,6 @@ export interface GetSkillsData {
     installCommand: string;
     author: {
       clerkId: string;
-      email: string;
       username?: string | null;
       imageUrl?: string | null;
     } & User_Key;
